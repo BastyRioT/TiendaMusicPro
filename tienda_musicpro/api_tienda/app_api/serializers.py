@@ -10,7 +10,7 @@ class ProductoSerializer(serializers.HyperlinkedModelSerializer) :
     class Meta:
         model = Producto
         fields = ['url', 'nombre', 'codigo', 
-        'precio', 'serie_producto', 'marca']
+        'precio', 'serie_producto', 'marca', 'categoria', 'imagen']
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer) :
