@@ -88,8 +88,9 @@
     </div>
 
     <!-- Albums -->
+
     <div class="Albums">
-        <div class="container">
+            <div class="container">
                 <div class="col-md-12">
                     <div class="titlepage">
                         <figure><img src="{% static 'images/teclado.png'%}" alt="img" /></figure>
@@ -102,62 +103,25 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            
                         </div>
                     </div>
                     <div class="row">
+                    {% for producto in productos %}
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                             <div class="news-box">
-                                <figure><img src="{% static 'images/gui.jpg'%}" alt="img" /></figure>
-                                <h3>Guitarras</h3>
-                                <p>Aqui podras encontrar los diversos tipos de guitarras que ofrecemos</p>
-                                <p><a href="#">click aquí.</a></p>
+                                <figure><img src="{{producto.imagen}}" alt="img" /></figure>
+                                <h3>{{producto.nombre}}</h3>
+                                <p>{{producto.marca}}</p>
+                                <p>${{producto.precio}}</p>
+                                <button type="button" class="btn btn-dark">Agregar carrito</button>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="news-box">
-                                <figure><img src="{% static 'images/baj.jpg'%}" alt="img" /></figure>
-                                <h3>Bajos</h3>
-                                <p>Aqui podras encontrar los diversos tipos de bajos que ofrecemos</p>
-                                <p><a href="#">click aquí.</a></p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="news-box">
-                                <figure><img src="{% static 'images/piano.jpg'%}" alt="img" /></figure>
-                                <h3>Pianos y Teclados</h3>
-                                <p>Aqui podras encontrar los diversos tipos de pianos que ofrecemos</p>
-                                <p><a href="#">click aquí.</a></p> 
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <br><br><div class="news-box">
-                                <figure><img src="{% static 'images/bat.jpg'%}" alt="img" /></figure>
-                                <h3>Baterias y Percusión</h3>
-                                <p>Aqui podras encontrar los diversos tipos de baterias que ofrecemos</p>
-                                <p><a href="#">click aquí.</a></p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <br><br><div class="news-box">
-                                <figure><img src="{% static 'images/amp.jpg'%}" alt="img" /></figure>
-                                <h3>Amplificadores</h3>
-                                <p>Aqui podras encontrar los diversos tipos de amplificadores que ofrecemos</p>
-                                <p><a href="#">click aquí.</a></p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <br><br><div class="news-box">
-                                <figure><img src="{% static 'images/accesorios.jpg'%}" alt="img" /></figure>
-                                <h3>Accesorios Varios</h3>
-                                <p>Aqui podras encontrar los diversos tipos de accesorios que ofrecemos</p>
-                                <p><a href="#">click aquí.</a></p>
-                            </div>
-                        </div>
-                    </div>
+
+                    {% endfor %}
+                </div>
+                    
                 </div>
             </div>
-        </div>
     </div>
     <!-- end Albums -->
 
