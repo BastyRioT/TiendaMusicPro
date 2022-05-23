@@ -34,48 +34,46 @@
 </head>
 <!-- body -->
 
-<body class="main-layout">
-    <!-- header -->
-    <header>
-        <!-- header inner -->
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col logo_section">
-                        <div class="full">
-                            <div class="center-desk">
-                                <div>
-                                    <a href="{% url 'index' %}"><img class="logo" 
-                                        src="{% static 'images/logo33.png'%}" alt="logo" /></a>
-                                </div>
+<body class="main-layout album-page">
+   <!-- header -->
+   <header>
+    <!-- header inner -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="{% url 'index' %}"><img src="{% static 'images/logo33.png'%}" alt="logo" /></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-8 col-md-10 col-sm-10">
-                        <div class="menu-area">
-                            <div class="limit-box">
-                                <nav class="main-menu">
-                                    <ul class="menu-area-main">
-                                        <li> <a href="{% url 'index' %}">Inicio</a> </li>
-                                        <li> <a href="{% url 'album' %}"> Productos</a> </li>
-                                    <!--<li> <a href="{% url 'contact' %}">Iniciar sesión</a> </li>--> 
-                                        
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                        <form class="search">
-                            <input class="form-control" type="text" placeholder="Search">
-                            <button><img src="{% static 'images/search_icon.png'%}"></button>
-                        </form>
                     </div>
                 </div>
+                <div class="col-xl-8 col-lg-8 col-md-10 col-sm-10">
+                    <div class="menu-area">
+                        <div class="limit-box">
+                            <nav class="main-menu">
+                                <ul class="menu-area-main">
+                                    <li> <a href="{% url 'index' %}"> Inicio </a> </li>
+                                    <li> <a href="{% url 'album' %}"> Productos </a> </li>
+                                    <!--<li> <a href="{% url 'contact' %}">Iniciar sesión</a> </li>--> 
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                    <form class="search">
+                        <input class="form-control" type="text" placeholder="Search">
+                        <button><img src="{% static 'images/search_icon.png'%}"></button>
+                    </form>
+                </div>
             </div>
-            <!-- end header inner -->
-    </header>
-    <!-- end header -->
+        </div>
+        <!-- end header inner -->
+</header>
+<!-- end header -->
     <section class="banner_section">
         <div class="banner-main">
             <img src="{% static 'images/vinilo.jpeg'%}" />
@@ -115,48 +113,23 @@
     </div>
 
     <!-- Categorias -->
-    <div id="screenshot" class="Lastestnews">
+    <div id="screenshot" class="Lastestnews pb-0 mt-0 pt-0">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <h2>INSTRUMENTOS</h2>
-                        <span>Los Mejores Instrumentos, con la Mejor Calidad y Precios.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            {% for producto in productos %}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4">
                     <div class="news-box text-center">
-                        <figure><img src="{% static 'images/guitar.jpg'%}" alt="img" /></figure>
-                        <h3>Instrumentos de Cuerda</h3>
-                        <p>Aqui podra visualizar la disponibilidad de todos los instrumentos de 
-                            cuerda dentro de nuestra tienda.<a href="#"></p>
-                                <button type="button" class="btn btn-warning mb-4">
-                                    <i class="bi bi-cart-check-fill"></i>Haz click aquí</button>
+                        <figure><img src="{{producto.imagen}}" alt="img" /></figure>
+                        <h3 class="pt-1 pb-1">{{producto.nombre}}</h3>
+                        <p class="pt-0 pb-0">{{producto.marca}}</p>
+                        <p class="pt-0 pb-0">${{producto.precio}}</p>
+                        <button type="button" class="btn btn-warning mb-4">
+                            <i class="bi bi-cart-check-fill"></i>Agregar al Carrito</button>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="news-box text-center">
-                        <figure><img src="{% static 'images/bateria.jpg'%}" alt="img" /></figure>
-                        <h3>Instrumentos de Percusión</h3>
-                        <p>Aqui podra visualizar la disponibilidad de todos los instrumentos de 
-                            percusión dentro de nuestra tienda.<a href="#"></p>
-                                <button type="button" class="btn btn-warning mb-4">
-                                    <i class="bi bi-cart-check-fill"></i>Haz click aquí</button>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="news-box text-center">
-                        <figure><img src="{% static 'images/Amplificadores.jpg'%}" alt="img" /></figure>
-                        <h3>Amplificadores</h3>
-                        <p>Aqui podra visualizar la disponibilidad de todos los amplificadores 
-                            dentro de nuestra tienda.<a href="#"></p>
-                                <button type="button" class="btn btn-warning mb-4">
-                                    <i class="bi bi-cart-check-fill"></i>Haz click aquí</button>
-                    </div>
-                </div>
-            </div>
+
+            {% endfor %}
+        </div> 
         </div>
     </div>
     <!-- end Categorias -->
