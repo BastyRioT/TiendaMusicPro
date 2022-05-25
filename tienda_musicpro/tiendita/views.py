@@ -13,7 +13,7 @@ def index(request):
     datos = resp.json()
     musicpro = {'productos': datos}
 
-    return render(request,'index.html', musicpro)
+    return render(request, 'index.html', musicpro)
 
 
 def album(request):
@@ -43,22 +43,40 @@ def eliminar(request, producto_id):
 
     return redirect("album")
 
+
+def sumar(request, producto_id):
+
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.agregar(producto)
+
+    return redirect("contact")
+
+
 def restar(request, producto_id):
 
     carrito = Carrito(request)
     producto = Producto.objects.get(id=producto_id)
     carrito.restar(producto)
 
-    return redirect("contact") 
+    return redirect("contact")
+
 
 def limpiar(request):
 
     carrito = Carrito(request)
     carrito.limpiar()
 
-    return  redirect("contact") 
+    return redirect("contact")
 
 
-def login(request):
+def contact(request):
 
-    return render(request, 'contact.html')
+    url = 'https://mindicador.cl/api/dolar/'
+
+    response = requests.get(url)
+    datos = response.json()
+    dolarHoy = datos['serie'][0]['valor']
+    musicpro = {'valorDolar': dolarHoy}
+
+    return render(request, 'contact.html', musicpro)
