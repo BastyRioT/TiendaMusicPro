@@ -79,4 +79,4 @@ def contact(request):
     dolarHoy = datos['serie'][0]['valor']
     musicpro = {'valorDolar': dolarHoy}
 
-    return render(request, 'contact.html', musicpro)
+    return render(request, 'contact.html',)

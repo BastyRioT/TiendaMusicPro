@@ -69,14 +69,14 @@
   </header>
   <!-- end header -->
 
-  <div>
+  <div class="container p-2 my-2 border">
     <table class="table table-dark table-striped">
       <thead>
         <tr>
-          <th scope="row" colspan="3" class="text-right">CARRITO</th>
+          <th scope="row" colspan="4" class="text-center">CARRITO</th>
         </tr>
         <tr>
-          <th scope="col">Nombe</th>
+          <th scope="col">Nombre</th>
           <th scope="col">Precio</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Agregar/Quitar producto</th>
@@ -87,31 +87,31 @@
         {% for key, value in request.session.carrito.items %}
         <tr>
           <td>{{value.nombre}}</td>
-          <td>{{value.precio}}</td>
+          <td>$ {{value.precio}}</td>
           <td>{{value.cantidad}}</td>
           <td>{{value.acumulado}}
-            <a href="{% url 'Sum' value.producto_id %}" class="btn btn-outline-light"> Agregar(+)</a>
-            <a href="{% url 'Sub' value.producto_id %}" class="btn btn-outline-light"> Quitar(-)</a>
+            <a href="{% url 'Sum' value.producto_id %}" class="btn btn-outline-light">(+)</a>
+            <a href="{% url 'Sub' value.producto_id %}" class="btn btn-outline-light">(-)</a>
           </td>
         </tr>
         {% endfor %}
         {% else %}
         <tr>
-          <td colspan="3">
+          <td colspan="4">
             <div class="text-center"> Sin Productos </div>
           </td>
         </tr>
         {% endif %}
         <tr>
           <th scope="row">Total:</th>
-          <td colspan="2">$ {{total_carrito}}</td>
+          <td colspan="3">$ {{total_carrito}}</td>
         </tr>
         <tr>
-          <th scope="row">Total Dolar:</th>
-          <td colspan="2">$ {% widthratio total_carrito valorDolar 1%} </td>
+          <th scope="row">Total en Dolares:</th>
+          <td colspan="3">$ {{total_carrito_dolar}} </td>
         </tr>
         <tr>
-          <th>
+          <th class="text-center" colspan="4">
             <a class="btn btn-outline-light" href="{% url 'CLS' %}">Limpiar</a>
             <a class="btn btn-outline-light" href="{% url 'album' %}">Volver</a>
           </th>
