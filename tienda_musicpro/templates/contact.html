@@ -90,8 +90,8 @@
           <td>$ {{value.precio}}</td>
           <td>{{value.cantidad}}</td>
           <td>{{value.acumulado}}
-            <a href="{% url 'Sum' value.producto_id %}" class="btn btn-outline-light">(+)</a>
-            <a href="{% url 'Sub' value.producto_id %}" class="btn btn-outline-light">(-)</a>
+            <a href="{% url 'Sum' value.producto_id %}" class="btn btn-primary">+</a>
+            <a href="{% url 'Sub' value.producto_id %}" class="btn btn-danger">-</a>
           </td>
         </tr>
         {% endfor %}
@@ -112,19 +112,12 @@
         </tr>
         <tr>
           <th class="text-center" colspan="4">
-            <a class="btn btn-outline-light" href="{% url 'CLS' %}">Limpiar</a>
+            <a class="btn btn-info" href="{% url 'CLS' %}">Limpiar</a>
             <a class="btn btn-outline-light" href="{% url 'album' %}">Volver</a>
           </th>
         </tr>
-
-
-
-
-
       </tbody>
-
     </table>
-
   </div>
 
 
