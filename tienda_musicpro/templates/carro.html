@@ -57,6 +57,9 @@
                     <li> <a href="{% url 'index' %}"> Inicio </a> </li>
                     <li> <a href="{% url 'tienda' %}"> Productos </a> </li>
                     <li> <a href="{% url 'carro' %}">Carrito</a> </li>
+                    <li> <a href="{% url 'vista_vendedor' %}">Vendedor</a> </li>
+                    <li> <a href="{% url 'vista_bodeguero' %}">Bodeguero</a> </li>
+                    <li> <a href="{% url 'vista_contador' %}">Contador</a> </li>
                   </ul>
                 </nav>
               </div>
@@ -108,7 +111,7 @@
         </tr>
         <tr>
           <th scope="row">Total en Dolares:</th>
-          <td colspan="3">$ {{total_carrito_dolar}} </td>
+          <td colspan="3">USD {{total_carrito_dolar}} </td>
         </tr>
         <tr>
           <th class="text-center" colspan="4">

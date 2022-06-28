@@ -68,3 +68,20 @@ def limpiar(request):
 def carro(request):
 
     return render(request, 'carro.html')
+
+def vista_vendedor(request):
+
+    url = 'http://127.0.0.1:8000/api/productos/'
+    resp = requests.get(url, auth=('admin', 'tiendamusicpro'))
+    datos = resp.json()
+    musicpro = {'productos': datos}
+
+    return render(request, 'vista_vendedor.html', musicpro)
+
+def vista_bodeguero(request):
+
+    return render(request, 'vista_bodeguero.html')
+
+def vista_contador(request):
+
+    return render(request, 'vista_contador.html')
