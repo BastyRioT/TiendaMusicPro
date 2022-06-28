@@ -8,22 +8,17 @@ from api.models import Producto
 
 def index(request):
 
-    url = 'http://127.0.0.1:8000/api/productos/'
-    resp = requests.get(url, auth=('admin', 'tiendamusicpro'))
-    datos = resp.json()
-    musicpro = {'productos': datos}
-
-    return render(request, 'index.html', musicpro)
+    return render(request, 'index.html')
 
 
-def album(request):
+def tienda(request):
 
     url = 'http://127.0.0.1:8000/api/productos/'
     resp = requests.get(url, auth=('admin', 'tiendamusicpro'))
     datos = resp.json()
     musicpro = {'productos': datos}
 
-    return render(request, 'album.html', musicpro)
+    return render(request, 'tienda.html', musicpro)
 
 
 def agregar(request, producto_id):
@@ -32,7 +27,7 @@ def agregar(request, producto_id):
     producto = Producto.objects.get(id=producto_id)
     carrito.agregar(producto)
 
-    return redirect("album")
+    return redirect("tienda")
 
 
 def eliminar(request, producto_id):
@@ -41,7 +36,7 @@ def eliminar(request, producto_id):
     producto = Producto.objects.get(id=producto_id)
     carrito.eliminar(producto)
 
-    return redirect("album")
+    return redirect("tienda")
 
 
 def sumar(request, producto_id):
@@ -50,7 +45,7 @@ def sumar(request, producto_id):
     producto = Producto.objects.get(id=producto_id)
     carrito.agregar(producto)
 
-    return redirect("contact")
+    return redirect("carro")
 
 
 def restar(request, producto_id):
@@ -59,7 +54,7 @@ def restar(request, producto_id):
     producto = Producto.objects.get(id=producto_id)
     carrito.restar(producto)
 
-    return redirect("contact")
+    return redirect("carro")
 
 
 def limpiar(request):
@@ -67,16 +62,9 @@ def limpiar(request):
     carrito = Carrito(request)
     carrito.limpiar()
 
-    return redirect("contact")
+    return redirect("carro")
 
 
-def contact(request):
+def carro(request):
 
-    url = 'https://mindicador.cl/api/dolar/'
-
-    response = requests.get(url)
-    datos = response.json()
-    dolarHoy = datos['serie'][0]['valor']
-    musicpro = {'valorDolar': dolarHoy}
-
-    return render(request, 'contact.html',)
+    return render(request, 'carro.html')
