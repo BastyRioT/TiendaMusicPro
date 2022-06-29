@@ -56,7 +56,14 @@
                   <ul class="menu-area-main">
                     <li> <a href="{% url 'index' %}"> Inicio </a> </li>
                     <li> <a href="{% url 'tienda' %}"> Productos </a> </li>
+<<<<<<< HEAD
                     <li> <a id="carro" href="{% url 'carro' %}">Carrito</a> </li>
+=======
+                    <li> <a href="{% url 'carro' %}">Carrito</a> </li>
+                    <li> <a href="{% url 'vista_vendedor' %}">Vendedor</a> </li>
+                    <li> <a href="{% url 'vista_bodeguero' %}">Bodeguero</a> </li>
+                    <li> <a href="{% url 'vista_contador' %}">Contador</a> </li>
+>>>>>>> 2122d3bc208961e7b041fe107e98a33dabdb350c
                   </ul>
                 </nav>
               </div>
@@ -108,7 +115,11 @@
         </tr>
         <tr>
           <th scope="row">Total en Dolares:</th>
+<<<<<<< HEAD
           <td id="dolar" colspan="3">$ {{total_carrito_dolar}} </td>
+=======
+          <td colspan="3">USD {{total_carrito_dolar}} </td>
+>>>>>>> 2122d3bc208961e7b041fe107e98a33dabdb350c
         </tr>
         <tr>
           <th class="text-center" colspan="4">
