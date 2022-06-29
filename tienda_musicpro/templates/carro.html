@@ -56,7 +56,7 @@
                   <ul class="menu-area-main">
                     <li> <a href="{% url 'index' %}"> Inicio </a> </li>
                     <li> <a href="{% url 'tienda' %}"> Productos </a> </li>
-                    <li> <a href="{% url 'carro' %}">Carrito</a> </li>
+                    <li> <a id="carro" href="{% url 'carro' %}">Carrito</a> </li>
                   </ul>
                 </nav>
               </div>
@@ -86,12 +86,12 @@
         {% if request.session.carrito.items %}
         {% for key, value in request.session.carrito.items %}
         <tr>
-          <td>{{value.nombre}}</td>
+          <td id="{{value.producto_id}}" >{{value.nombre}}</td>
           <td>$ {{value.precio}}</td>
           <td>{{value.cantidad}}</td>
           <td>{{value.acumulado}}
-            <a href="{% url 'Sum' value.producto_id %}" class="btn btn-primary">+</a>
-            <a href="{% url 'Sub' value.producto_id %}" class="btn btn-danger">-</a>
+            <a href="{% url 'Sum' value.producto_id %}" id="mas" class="btn btn-primary">+</a>
+            <a href="{% url 'Sub' value.producto_id %}" id="menos" class="btn btn-danger">-</a>
           </td>
         </tr>
         {% endfor %}
@@ -108,7 +108,7 @@
         </tr>
         <tr>
           <th scope="row">Total en Dolares:</th>
-          <td colspan="3">$ {{total_carrito_dolar}} </td>
+          <td id="dolar" colspan="3">$ {{total_carrito_dolar}} </td>
         </tr>
         <tr>
           <th class="text-center" colspan="4">

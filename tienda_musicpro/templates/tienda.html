@@ -62,7 +62,7 @@
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
                                         <li> <a href="{% url 'index' %}"> Inicio </a> </li>
-                                        <li> <a href="{% url 'tienda' %}"> Productos </a> </li>
+                                        <li> <a id="titulo" href="{% url 'tienda' %}"> Productos </a> </li>
                                         <li> <a href="{% url 'carro' %}">Carrito</a> </li>
                                     </ul>
                                 </nav>
@@ -111,12 +111,18 @@
                             <h3 class="pt-1 pb-1">{{producto.nombre}}</h3>
                             <p class="pt-0 pb-0">{{producto.marca}}</p>
                             <p class="pt-0 pb-0">${{producto.precio}}</p>
-                            <a href="{% url 'Add' producto.id %}" class="btn btn-warning mb-4" onclick="myFunction()">
+                            <a href="{% url 'Add' producto.id %}" class="btn btn-warning mb-4" onclick="showAlert()">
                                 <i class="bi bi-cart-check-fill"></i>Agregar al Carrito</a>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
+            </div>
+        </div>
+        <div class="container fixed-bottom" style="display:none;" id="myAlert">
+            <div class="alert alert-success alert-dismissable" id="myAlert2">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                Se agregó al carrito correctamente!
             </div>
         </div>
     </div>
@@ -152,10 +158,13 @@
     <!-- end footer -->
     <!-- Javascript files-->
     <script>
-        function myFunction() {
-          alert("Se añadio al carrito correctamente!");
+        function showAlert() {
+            if ($("#myAlert").find("div#myAlert2").length == 0) {
+                $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button> Success! message sent successfully.</div>");
+            }
+            $("#myAlert").css("display", "");
         }
-        </script>
+    </script>
     <script src="{% static 'js/jquery.min.js'%}"></script>
     <script src="{% static 'js/popper.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
