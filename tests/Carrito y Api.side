@@ -1,0 +1,187 @@
+{
+  "id": "5080c9e2-77ee-47e3-a46d-ead5bc85e3ad",
+  "version": "2.0",
+  "name": "Carrito y Api",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "a336b88e-c9e4-4930-b381-39f6523f5c26",
+    "name": "T1 Agregar al carro",
+    "commands": [{
+      "id": "285a4155-b64f-4873-b173-3c326b649bdb",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f5633f9a-8438-4091-b556-915b52db0767",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a009790f-e732-4bb0-92a2-39ec1abaa574",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Productos')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/tienda/')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "46dce617-dd70-45e1-b51c-daf75ebb0d7d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=titulo",
+      "targets": [],
+      "value": "PRODUCTOS"
+    }, {
+      "id": "aaa1b2c5-3aff-4c64-9cfa-57fff876c54d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Agregar al Carrito",
+      "targets": [
+        ["linkText=Agregar al Carrito", "linkText"],
+        ["xpath=//a[@onclick='showAlert()']", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '/agregar/3/')]", "xpath:href"],
+        ["xpath=//a[contains(.,'Agregar al Carrito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c91ae65-e639-45ae-aaee-23ea1db9f92c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//a[@onclick='showAlert()'])[6]",
+      "targets": [
+        ["xpath=(//a[@onclick='showAlert()'])[6]", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '/agregar/8/')]", "xpath:href"]
+      ],
+      "value": ""
+    }, {
+      "id": "37181fbf-b9ff-485b-bcc2-c0e0c940af82",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(3) > a",
+      "targets": [
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carrito')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/carro/')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfb4b074-bad4-4021-bc7a-bf8697a5e1c5",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=carro",
+      "targets": [],
+      "value": "CARRITO"
+    }, {
+      "id": "307dd8bb-8af3-4c7b-9d32-d31bc34aa432",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=3",
+      "targets": [],
+      "value": "Guitarra Mercury MSM02"
+    }, {
+      "id": "43fad7e7-d5d5-471d-b5f6-1f690f026f63",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=8",
+      "targets": [],
+      "value": "Accesorios Vocal Studio Pro"
+    }]
+  }, {
+    "id": "447a20be-2b67-4775-97f8-5d683f9c7362",
+    "name": "T2 Api dolar",
+    "commands": [{
+      "id": "ffcc1dc1-fadb-47d0-988d-3b955ccc0d64",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2d695c0-f343-45de-981b-689f23fe0190",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b6ec36aa-d69e-4b8e-8adf-dcde8f6109d9",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) > a",
+      "targets": [
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Productos')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/tienda/')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4543e71-b8bc-455b-a659-15316ab3d3a1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//a[@onclick='showAlert()'])[6]",
+      "targets": [
+        ["xpath=(//a[@onclick='showAlert()'])[6]", "xpath:attributes"],
+        ["xpath=//a[contains(@href, '/agregar/8/')]", "xpath:href"]
+      ],
+      "value": ""
+    }, {
+      "id": "feb4374c-ab33-45c0-84e7-d981002b5a13",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(3) > a",
+      "targets": [
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Carrito')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/carro/')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc90d3e5-a4b6-4499-ab86-ffd176b7e825",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=dolar",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65df27ed-f163-47cb-be7c-dc981d6f03a4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-info",
+      "targets": [
+        ["css=.btn-info", "css:finder"],
+        ["xpath=//a[contains(text(),'Limpiar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/limpiar/')]", "xpath:href"],
+        ["xpath=//th/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5276d7d7-0bda-4a67-abd0-460ae89d0fb5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=dolar",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8de7e34b-8999-4a16-9da8-daa99c0bbe27",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}
