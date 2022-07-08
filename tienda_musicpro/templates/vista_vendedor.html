@@ -75,37 +75,77 @@
         </div>
       </nav>
     <!-- end header -->
-        <!-- Albums -->
+    <!-- Albums -->
 
-        <div class="Albums">
-            <div class="container">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <figure><img src="{% static 'images/teclado.png'%}" alt="img" /></figure>
-                        <span>Lista de todos los productos disponibles</span>
-                    </div>
-                </div>
-            </div>
-            <div id="screenshot" class="Lastestnews pb-0 mt-0 pt-0">
-                <div class="container">
-                    <div class="row">
-                        {% for producto in productos %}
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-4">
-                            <div class="news-box text-center">
-                                <figure><img src="{{producto.imagen}}" alt="img" /></figure>
-                                <h3 class="pt-1 pb-1">{{producto.nombre}}</h3>
-                                <p class="pt-0 pb-0">{{producto.marca}}</p>
-                                <p class="pt-0 pb-0">${{producto.precio}}</p>
-                                
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
+    <div class="Albums">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <figure><img src="{% static 'images/teclado.png'%}" alt="img" /></figure>
+                    <span>Lista de todos los productos disponibles</span>
                 </div>
             </div>
         </div>
-        <!-- end Albums -->
+    </div> 
 
+    <div class="container p-2 my-2 border">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="row" colspan="4" class="text-center">Productos disponibles</th>  
+            </tr>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+            </tr>
+            
+          </thead>
+          <tbody>
+            <tr>{% for producto in productos %}
+              <td>{{producto.nombre}}</td>
+              <td>$ {{producto.precio}}</td> 
+              
+          </tbody>{% endfor %}
+        </table>    
+    </div>       
+
+    <div class="container p-2 my-2 border">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="row" colspan="4" class="text-center">Pedidos disponibles</th>
+            </tr>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Aprobar / Rechazar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if request.session.carrito.items %}
+            {% for key, value in request.session.carrito.items %}
+            <tr>
+              <td>{{value.nombre}}</td>
+              <td>$ {{value.precio}}</td>
+              <td>{{value.cantidad}}</td>
+              <td>
+                <a href="#" class="btn btn-primary">Aprobar</a>
+                <a href="#" class="btn btn-danger">Rechazar</a>
+              </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+              <td colspan="4">
+                <div class="text-center"> Sin Productos </div>
+              </td>
+            </tr>
+            {% endif %}
+            </tbody>
+        </table>    
+    </div>       
+    <!-- end Albums -->
 
     <!-- footer -->
     <br><br>

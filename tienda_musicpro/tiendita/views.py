@@ -85,3 +85,19 @@ def vista_bodeguero(request):
 def vista_contador(request):
 
     return render(request, 'vista_contador.html')
+
+def aprobar(requets):
+
+    return redirect("vista_vendedor")
+
+def rechazar(requets):
+
+    return redirect("vista_vendedor")
+
+def login(request):
+
+    return render(request, 'login.html')
+    
+def registro(request):
+
+    return render(request, 'registro.html')
