@@ -16,6 +16,7 @@ class Carrito:
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
                 "precio": producto.precio,
+                "imagen": producto.imagen,
                 "cantidad": 1,
             }
         else:

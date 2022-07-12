@@ -101,3 +101,11 @@ def login(request):
 def registro(request):
 
     return render(request, 'registro.html')
+
+def entrega(request):
+
+    return render(request, 'entrega.html')
+
+def pago(request):
+
+    return render(request, 'pago.html')

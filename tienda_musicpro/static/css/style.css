@@ -19,6 +19,11 @@
     box-sizing: border-box !important;
 }
 
+.texto {
+    text-align: center;
+    color: white;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -1111,7 +1116,7 @@ nav.main-menu {
     vertical-align: middle;
 }
 
-.main-menu ul>li:nth-child (6) {
+.main-menu ul>li:nth-child(6) {
     padding-right: 0px;
 }
 
@@ -1129,8 +1134,6 @@ nav.main-menu {
     right: 0;
     padding: 15px 0px;
 }
-
-.sub-full {}
 
 .simple-down {
     padding: 15px;
