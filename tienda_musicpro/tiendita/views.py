@@ -119,3 +119,12 @@ def entrega(request):
 def pago(request):
 
     return render(request, 'pago.html')
+
+def confirmar(request, producto_id):
+
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+
+    return redirect("vista_contador")
+    

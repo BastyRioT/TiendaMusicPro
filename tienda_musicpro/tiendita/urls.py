@@ -1,10 +1,6 @@
 from atexit import register
 from django.urls import path, include, re_path
-<<<<<<< HEAD
-from .views import index, login, rechazar, registro, tienda, carro, agregar, eliminar, restar, limpiar, sumar, vista_bodeguero, vista_contador, vista_vendedor
-=======
-from .views import index, login, registro, entrega, pago, tienda, carro, agregar, eliminar, restar, limpiar, sumar, vista_bodeguero, vista_contador, vista_vendedor
->>>>>>> 3ef615b50d74c124ea99059b6e67a29a18614ef2
+from .views import index, login, rechazar, registro, pago, entrega, tienda, carro, agregar, eliminar, restar, limpiar, confirmar, sumar, vista_bodeguero, vista_contador, vista_vendedor
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -23,8 +19,9 @@ urlpatterns = [
     path('sumar/<int:producto_id>/', sumar, name="Sum"),
     path('eliminar/<int:producto_id>/', eliminar, name="Del"),
     path('restar/<int:producto_id>/', restar, name="Sub"),
+    path('confirmar/<int:producto_id>/', confirmar, name="Con"),
     path('limpiar/', limpiar, name="CLS"),
-    path('recahazar/<int:producto_id>/', rechazar, name="rec"),
+    path('rechazar/<int:producto_id>/', rechazar, name="rec"),
 
 ]
 if settings.DEBUG:

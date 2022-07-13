@@ -45,3 +45,11 @@ class Carrito:
     def limpiar(self):
         self.session["carrito"] = {}
         self.session.modified = True
+
+    def confirmar(self, producto):
+        id = str(producto.id)
+        if id in self.carrito.keys():
+            self.carrito[id]["cantidad"] -= producto.id
+            self.carrito[id]["precio"] -= producto.precio
+            if self.carrito[id]["cantidad"] <= 0: self.eliminar(producto)
+            self.guardar_carrito()

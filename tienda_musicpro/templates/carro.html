@@ -68,6 +68,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'carro' %}">Carrito</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -77,9 +80,6 @@
             <a class="dropdown-item" href="{% url 'vista_vendedor' %}">Vendedor</a>
             <a class="dropdown-item" href="{% url 'vista_bodeguero' %}">Bodeguero</a>
             <a class="dropdown-item" href="{% url 'vista_contador' %}">Contador</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'carro' %}">Carrito</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -173,7 +173,7 @@
 
   <!-- end footer -->
   <!-- Javascript files-->
-  
+
   <script src="{% static 'js/jquery.min.js'%}"></script>
   <script src="{% static 'js/popper.min.js'%}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
