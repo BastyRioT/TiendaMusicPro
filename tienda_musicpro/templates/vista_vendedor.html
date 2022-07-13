@@ -130,8 +130,8 @@
               <td>$ {{value.precio}}</td>
               <td>{{value.cantidad}}</td>
               <td>
-                <a href="#" class="btn btn-primary">Aprobar</a>
-                <a href="#" class="btn btn-danger">Rechazar</a>
+                <a href="{% url 'vista_bodeguero' %}" class="btn btn-primary">Aprobar</a>
+                <a href="{% url 'rec' value.producto_id %}" class="btn btn-danger">Rechazar</a>
               </td>
             </tr>
             {% endfor %}

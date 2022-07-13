@@ -55,6 +55,14 @@ def restar(request, producto_id):
     carrito.restar(producto)
 
     return redirect("carro")
+    
+def rechazar(request, producto_id):
+
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+
+    return redirect("vista_vendedor")
 
 
 def limpiar(request):
@@ -80,19 +88,21 @@ def vista_vendedor(request):
 
 def vista_bodeguero(request):
 
-    return render(request, 'vista_bodeguero.html')
+    url = 'http://127.0.0.1:8000/api/productos/'
+    resp = requests.get(url, auth=('admin', 'tiendamusicpro'))
+    datos = resp.json()
+    musicpro = {'productos': datos}
+
+    return render(request, 'vista_bodeguero.html',musicpro)
 
 def vista_contador(request):
 
-    return render(request, 'vista_contador.html')
+    url = 'http://127.0.0.1:8000/api/productos/'
+    resp = requests.get(url, auth=('admin', 'tiendamusicpro'))
+    datos = resp.json()
+    musicpro = {'productos': datos}
 
-def aprobar(requets):
-
-    return redirect("vista_vendedor")
-
-def rechazar(requets):
-
-    return redirect("vista_vendedor")
+    return render(request, 'vista_contador.html', musicpro)
 
 def login(request):
 
