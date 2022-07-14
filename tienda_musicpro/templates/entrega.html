@@ -117,7 +117,6 @@
                 {% if request.session.carrito.items %}
                 {% for key, value in request.session.carrito.items %}
                 <tr>
-                    <td style="width: 50px;">{{value.imagen}}</td>
                     <td>{{value.nombre}}<br>
                         {{value.cantidad}} unidad</td>
                     <td>$ {{value.precio}}</td>

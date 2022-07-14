@@ -60,10 +60,9 @@ def rechazar(request, producto_id):
 
     carrito = Carrito(request)
     producto = Producto.objects.get(id=producto_id)
-    carrito.restar(producto)
+    carrito.confirmar(producto)
 
     return redirect("vista_vendedor")
-
 
 def limpiar(request):
 
@@ -93,7 +92,7 @@ def vista_bodeguero(request):
     datos = resp.json()
     musicpro = {'productos': datos}
 
-    return render(request, 'vista_bodeguero.html',musicpro)
+    return render(request, 'vista_bodeguero.html', musicpro)
 
 def vista_contador(request):
 
@@ -107,6 +106,10 @@ def vista_contador(request):
 def login(request):
 
     return render(request, 'login.html')
+
+def login_e(request):
+
+    return render(request, 'login_e.html')
     
 def registro(request):
 
@@ -124,7 +127,7 @@ def confirmar(request, producto_id):
 
     carrito = Carrito(request)
     producto = Producto.objects.get(id=producto_id)
-    carrito.restar(producto)
+    carrito.confirmar(producto)
 
     return redirect("vista_contador")
     

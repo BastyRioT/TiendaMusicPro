@@ -48,7 +48,6 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 </head>
-<!-- body -->
 
 <body>
     <!-- header -->
@@ -78,7 +77,6 @@
                 {% if request.session.carrito.items %}
                 {% for key, value in request.session.carrito.items %}
                 <tr>
-                    <td style="width: 50px;">{{value.imagen}}</td>
                     <td>{{value.nombre}}<br>
                         {{value.cantidad}} unidad</td>
                     <td>$ {{value.precio}}</td>

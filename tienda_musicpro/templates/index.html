@@ -62,26 +62,9 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+            <ul class="navbar-nav mr-auto w-100">
+                <li class="nav-item active flex-fill">
                     <a class="nav-link" href="{% url 'index' %}">Inicio<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'carro' %}">Carrito</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Vistas
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'vista_vendedor' %}">Vendedor</a>
-                        <a class="dropdown-item" href="{% url 'vista_bodeguero' %}">Bodeguero</a>
-                        <a class="dropdown-item" href="{% url 'vista_contador' %}">Contador</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Login</a>

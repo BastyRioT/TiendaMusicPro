@@ -53,40 +53,28 @@
   <!-- header -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'index' %}">
-      <img src="{% static 'images/logo33.png'%}" width="200" height="100" alt="logo">
+        <img src="{% static 'images/logo33.png'%}" width="200" height="100" alt="logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'index' %}">Inicio<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'carro' %}">Carrito</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Vistas
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'vista_vendedor' %}">Vendedor</a>
-            <a class="dropdown-item" href="{% url 'vista_bodeguero' %}">Bodeguero</a>
-            <a class="dropdown-item" href="{% url 'vista_contador' %}">Contador</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
-        </li>
-      </ul>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto w-100">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
+            </li>
+
+            <li class="nav-item flex-fill active">
+                <a class="nav-link" href="{% url 'carro' %}">Carrito</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Cerrar Sesión</a>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>
   <!-- end header -->
 
   <div class="container p-2 my-2">
