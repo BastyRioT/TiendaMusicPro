@@ -11,7 +11,7 @@ Estas son:<br>
 -pip install requests<br>
 -pip install Pillow<br>
 
-## Imagenes del proyecto
+## Imagenes del proyecto 📷
 
 Inicio<br>
 ![MusicPro](project-imgs/inicio.png)
