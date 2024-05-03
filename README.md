@@ -1,7 +1,7 @@
 # MusicPro 🎵
 
-MusicPro es una página web en la que puedes comprar instrumentos, agregarlos al carrito, ver el valor total en dolares.<br>
-También contiene las vistas de bodeguero, cotnador y vendedor.
+MusicPro es una página web en la que puedes comprar instrumentos, agregarlos al carrito y ver el valor total en dolares.<br>
+También contiene las vistas de bodeguero, contador y vendedor.
 
 ## Importante 💻
 
